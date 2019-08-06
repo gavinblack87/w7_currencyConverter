@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Currency Converter</title>
+  <link rel="stylesheet" href="./css/main.css">
+  <script type="text/javascript" src="./js/bundle.js"></script>
+</head>
+<body>
+
+  <div id="app">
+    <h1>Converter</h1>
+
+    <label for="currency_select">Select a Currency:</label>
+    <select id="currency_select" v-model="selectedCurrency">
+      <option disabled value="">Select a Currency</option>
+      <option v-for="(value, name) in currencies" :value= "value">{{name}}:{{value}}</option>
+    </select>
+
+    <h2>€ to be converted</h2>
+    <input type="number" v-model.number="euroNumber" >
+
+
+    <h3>Exchange Value:{{currencyConverter}}</h3>
+
+    <h2>Reverse</h2>
+    <input type="number" v-model.number="reverseNumber">
+
+    <h3>Reverse Exchange Value:€{{reverseConverter}}</h3>
+
+
+  </div>
+
+</body>
+</html>
